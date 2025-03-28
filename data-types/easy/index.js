@@ -146,9 +146,10 @@ console.log(id1 === id2); // Output: false (Symbols are always unique)
 // Ans: Object
 
 // 26. How do you check if a variable is an array?
-// Ans: to check variable is array then const a = ["df",4]
+// Ans: to check variable is array then 
+const a = ["df",4]
 Array.isArray(a)
-true
+
 
 // 27. What is the data type of { name: "John", age: 30 }?
 // Ans: Object
