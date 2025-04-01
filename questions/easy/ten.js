@@ -70,19 +70,3 @@ console.log(z);
 // for decalring value of variable that is immutable so face the error 
 
 
-// 1. 
-// Ans: 
-// 1. 
-// Ans: 
-// 1. 
-// Ans: 
-// 1. 
-// Ans: 
-// 1. 
-// Ans: 
-// 1. 
-// Ans: 
-// 1. 
-// Ans: 
-// 1. 
-// Ans: 

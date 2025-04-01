@@ -115,3 +115,10 @@ console.log(g);
 const h;
 // If you don't assign vairable in let it will work fine
 let i; 
+
+
+// why string is more powerfull than number ?
+// 14. console.log("123" + 4);
+//Ans: we are adding the string and number and as so = 1234
+
+// 
