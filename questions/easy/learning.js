@@ -121,4 +121,4 @@ let i;
 // 14. console.log("123" + 4);
 //Ans: we are adding the string and number and as so = 1234
 
-// 
+// Not operator (!) returns true or false console.log(!"helo") = false
