@@ -36,6 +36,7 @@ var a = 5;
 // will give undefined 
 
 // Block scope: 
+
 console.log(b());
 const b = function yo() {
     console.log("Hello");
@@ -49,9 +50,68 @@ function so() {
     console.log("Hello");
 };
 
+// But ye NBS undefined deta hai lekin BS error aakhi q ?
+// Firstly understand declartiona and intilization of variable
+
+// Delartion: Variable is declared 
+const c;
+// Intialzation: variable got the value 
+const d =25;
+
+// How does JS enginer works ?
+const e = 12
+// 1. Value is declared: const e; which means undefined 
+// 2. variable gets intialized: const e = 12 
+
+// Hoisting for Var
+// Let's take an example of this
+console.log(f);
+var f = 5;
+
+// Step1: Hoist kr de 
+var f;
+//// Step2: Access it: but we didn't get the value so console.log(f) = undefined 
+console.log(f);
+
+// these thing won't run but I should write
+//Step3: Value gets intialized
+f = 5
+// Step4: then if again console then will give value but that won't happen
+console.log(f);
+
+// Hoisting for let and const
+console.log(f);
+var g = 5;
+
+
+
+
+// Step1: Hoist kr de
+// let aur const bhi hoist hote hain, Temporal Dead Zone (TDZ) me chale jaate hain.
+// Matlab JS declare toh kar deti hai, par tab tak us variable ko access nahi karne deti jab tak uski value assign nahi hoti.
+let g;
+
+// Step2: Access it: Ab chunki TDZ me access nahi jab tak value assign nahi ho jaati so face the error 
+console.log(g);
+
+// these thing won't run but I should write
+//Step3: Value gets intialized
+g = 5
+// Step4: then if again console then will give value but that won't happen
+console.log(g);
+
+
 // In short 
 // Block Scope (let, const) → Pehle access karne par error (TDZ).
 
 // Non-Block Scope (var) → Pehle access karne par undefined.
 
 // Agar direct function likha hai (function declaration), toh usko kahin bhi call kar sakte ho.
+
+
+
+// const vs let
+// you you have to assign the variable in const
+const h;
+// If you don't assign vairable in let it will work fine
+let i; 
