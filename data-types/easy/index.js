@@ -161,4 +161,5 @@ Array.isArray(a)
 // Ans: Object
 
 // 30. What is the difference between typeof and instanceof in JavaScript?
-// Ans: typeof gives type of data type and instanceof I don't know man
+// Ans: typeof gives type of data type and instanceof I don't know man 
+// it's related to constructor will so , will learn that then will tell you
