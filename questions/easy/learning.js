@@ -113,12 +113,19 @@ console.log(g);
 // const vs let
 // you you have to assign the variable in const
 const h;
-// If you don't assign vairable in let it will work fine
+// If you don't assign vairable in let it will work fine js will give undefined
 let i; 
 
 
+// 14. console.log("123" + 4); = "1234"
 // why string is more powerfull than number ?
-// 14. console.log("123" + 4);
-//Ans: we are adding the string and number and as so = 1234
+// JS converts data frocefully according to need https://www.geeksforgeeks.org/what-is-type-coercion-in-javascript/
+// this is called js Coercion  properties: 
+// that's why 
+// console.log(3+"4"); = "34"
+// console.log(5-"4"); = 1
+
+
+
 
 // Not operator (!) returns true or false console.log(!"helo") = false

@@ -7,17 +7,17 @@
 
 
 // 13. console.log("hello".slice(1, 4));
-// Ans: will slice index from 1 to 4: ell
+// Ans: will slice index from 1 to 4: ello
 // your answer wrong but don't wrorry cause it is 
 //  Lil bit complex you will learn when use it 
+
+// Btw answer = ell (last index won't count)
 
 
 // 14. console.log("123" + 4);
 //Ans: we are adding the string and number and as so = 1234
   
 // 15. console.log("hello".includes("h"));
-// 
-
 // Ans: includes method give boolean: so true
 
 
@@ -37,5 +37,4 @@
 // Ans: returns the max value: 10
 
 // 20. console.log(Math.min(5, -3, 12, 0));
-
 // Ans: Returns the min value: -3
