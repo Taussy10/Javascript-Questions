@@ -1,121 +1,120 @@
 
-// Read this: https://dev.to/chintanonweb/mastering-javascript-memory-a-beginners-guide-to-stack-and-heap-57nj
-
-
-let person = { name: "Alice" };
-console.log(person.name);
-// what will be output ? 
-
-// Ans: Alice  
-
-
-let car = { brand: "Toyota" };
-car.model = "Corolla";
-console.log(car);
-// what will be output ? 
-
-// Ans: Dude there is no such thing as model key oh we are adding model key so 
-// it will be add in last position  
-// ans will be {brand:"Toyota", model:"Corolla"}
-
-
-//3.
-let user = { age: 25 };
-user.age = 30;
-console.log(user.age);
-
-// what will be output ? 
-
-// Ans: Here age key is already has value of 25 but we are again giving value to age key
-// so basically by this we update the value so
-//  answer will be {age:30}
-
-// CORRECTION: asked output value not object structure so
-// user.age updated value will be 30 
-
-//4.
-let obj = {};
-obj["key"] = "value";
-console.log(obj["key"]);
-
-// what will be output ? 
-
-// Ans: 
-// Look firstly we have empty object then 
-// we are adding a key value pair named as "Key" and "value" using bracket notion 
-// btw you should know that we can add it using bracket notation and also write key in string 
-// cause under the hoood keys are string in js
-
-// So answer will be just like we access values using dot notioations:
-// Answer: "Value"
-
-//5.
-let fruit = { name: "Mango" };
-delete fruit.name;
-console.log(fruit.name);
-
-// what will be output ? 
-
-// Ans: We have deleted so it js by defaul put undefined value so  undefined 
-
-//6.
-let a = { val: 5 };
-let b = a;
-b.val = 10;
-console.log(a.val);
-
-
-// what will be output ? 
-
-// Ans: You should know about copying in refrence data type: it's a ref data type
-// what is refrence means that's this value is refering to a then you copy then that value refer to b  
-// then if you make change copied then that will refer to b
-// then why it's start refering to a ? 
-
-// Actually value created by ref data types becomes ref pointer(A pointer(thing) that refers to a particular variable 
-// think like a TV(thing) as refrence pointer and variable as two remotes a and b then if a se 10 par valume kar to b par 
-// bhi show 10 valume agar b se +20 kara = 10 +20 =30 so a par value 30 show karega  )
-
-// so answer will be: 10 
-
-
-//7.
-let book = {
-  title: "JS Basics",
-  pages: 100
+// Learn about this keywrod 
+// to mujhe proptype then deep copy shallow copy  then Chaining & Circular References and  aankhe khuli rakhni padegi
+// 1.
+let car = {
+  brand: "Honda",
+  year: 2020,
+  getAge: function(currentYear) {
+    return currentYear - this.year;
+  }
 };
-console.log(Object.keys(book));
+console.log(car.getAge(2025)); 
 
-// what will be output ? 
+// Answer: 2025 -2020 = 5  
 
-// Ans: Don't know what Object.keys() method does but may it returns keys of an object 
-// so answer will be: title then pages  
 
-// Actually it returns key but in array so: [title,pages]
-// BTW for also value we have: book.values that returns values of object in array
 
-//8.
-let student = { name: "Ravi", marks: 90 };
-for (let key in student) {
-  console.log(key);
+// 2.
+let user = {
+  name: "Sam",
+  address: {
+    city: "Delhi",
+    country: "India"
+  }
+};
+console.log(user.address.city);
+
+// Answer: "Delhi" 
+
+// 3.
+let obj = { a: 1, b: 2 };
+for (let key in obj) {
+
+  if (obj.hasOwnProperty(key)) {
+    console.log(key, obj[key]);
+  }
 }
 
-// Ans: IT loops all over the keys then key variable represent all the keys in object
-// so value will be: name then marks 
+// Answer: has own property just checks whether that key exist or not so: a then b , 1 then 2 
 
 
-//9.
-let x = { a: 1 };
-console.log("a" in x);
-// may be in key word is use for in(exist or not) but for what ? key or value may be value 
-// so answer will be: False 
+// 4.
+let person = {
+  firstName: "John",
+  lastName: "Doe"
+};
+let fullName = person.firstName + " " + person.lastName;
+console.log(fullName);
 
-// CORRECTION: Actually it checks key so TRUE 
+// Answer: "John Doe"
 
 
-//10.
-let obj = { name: "Tom" };
-console.log(obj.age || "Not found");
-// look we don't have obj.age so it's false and it's OR operator so go to second 
-// return it: "Not found"
+// 5.
+let book = {
+  title: "JS Guide",
+  author: "Anna",
+  year: 2021
+};
+delete book.year;
+console.log(book.year);
 
+// Answer: undefined cause there is no key book.year so js will return undefined  
+
+
+
+// 6.
+let colors = ["red", "green", "blue"];
+let colorObj = {};
+
+colors.forEach((color, index) => {
+  colorObj[index] = color;
+});
+console.log(colorObj);
+
+// Answer: Array par forEach lagay then: value add colorObj me index(start from0) as key
+//  and value as color
+// so Answer will be: colorObj = {0:"red" , 1:"green", 2:"blue"} 
+
+
+// 7.
+let settings = {
+  theme: "dark",
+  notifications: true
+};
+
+let copySettings = Object.assign({}, settings);
+
+copySettings.theme = "light";
+console.log(settings.theme);
+
+// Answer: actually this assign method will take settings object will add it empty object then return the newly created object
+// that is stroed by copySettings then change the value as we know that 
+// objects are ref data type so pointer changes according to variable so answer: "light"
+
+// 8.
+const obj1 = { val: 1 };
+const obj2 = { val: 2 };
+const obj3 = obj1;
+obj3.val = 3;
+console.log(obj1.val, obj2.val);
+
+// Answer: Ref data type so value will change: 3 then 2
+
+// 9.
+let data = {
+  1: "one",
+  2: "two",
+  3: "three"
+};
+console.log(data["2"]);
+
+// Answer: "two"
+
+
+// 10.
+let obj4 = {};
+obj4.a = obj4;
+console.log(obj4.a.a.a.a === obj4);
+
+// Answer: False case obj4 is empty object
