@@ -91,6 +91,9 @@ console.log(Object.keys(book));
 // Ans: Don't know what Object.keys() method does but may it returns keys of an object 
 // so answer will be: title then pages  
 
+// Actually it returns key but in array so: [title,pages]
+// BTW for also value we have: book.values that returns values of object in array
+
 //8.
 let student = { name: "Ravi", marks: 90 };
 for (let key in student) {
