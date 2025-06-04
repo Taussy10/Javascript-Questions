@@ -92,10 +92,9 @@ console.log(settings.theme);
 // that is stroed by copySettings then change the value as we know that 
 // objects are ref data type so pointer changes according to variable so answer: "light"
 
-// Correction: Original object remains unchanged. 
-// Output is "dark" because Object.assign creates 
-// a shallow copy, so modifying copySettings does not
-//  affect settings.
+// CORRECTION: Flatten props won't change cause we are doing shallow copy
+//  yeah by assign method objects are copied only shallow  
+// so answer: "dark"
 
 
 // 8.
@@ -120,8 +119,19 @@ console.log(data["2"]);
 
 // 10.
 let obj4 = {};
+// we are adding value(obj4) in key(a)
 obj4.a = obj4;
 console.log(obj4.a.a.a.a === obj4);
 
+
 // Answer: False case obj4 is empty object
 // CORRECTION: Actually it's TRUE
+
+// WHY ? cause by obj.a = obj4
+obj4 = {a: obj4}
+// BTW value obj4 have obj4.a so 
+obj4 = {a: obj4 ={ a: obj4}}
+// if you do obj4.a = obj4 then obj4.a.a = obj4 
+// for each key obj4.a.a.a will always obj4 
+// That's why it's true 
+

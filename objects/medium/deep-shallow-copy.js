@@ -70,3 +70,23 @@ console.log("DeepCopy after changes :",deep);
 
 console.log("User object after deep copy :",user);
 
+
+// Learning from this
+// 1. Deep Copy
+// Bilkul independent copy banata hai.
+// Agar copied object mein kuch bhi change karega, original object par koi effect nahi padega — chahe wo flatten property ho ya nested object.
+// Example: JSON.parse(JSON.stringify(obj))
+
+
+// 2. Shallow Copy
+// if you copy original object then if you try to change anything in copied 
+// object then in original object only nested objects will change
+// not the flatten properties
+// To implement Shallow Copy: Spread operator { ...obj } or Object.assign({}, obj)
+
+
+// 3. Reference Copy (Just copying reference)
+// Copy nahi hota, sirf reference copy hota hai.
+// Dono variables (original aur copied) ek hi object ko point karte hain.
+// Agar copied mein kuch bhi change kiya, original mein bhi wohi change reflect hota hai, chahe flatten ho ya nested.
+// Example: const copied = obj
