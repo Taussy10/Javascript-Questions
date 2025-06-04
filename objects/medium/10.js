@@ -92,6 +92,12 @@ console.log(settings.theme);
 // that is stroed by copySettings then change the value as we know that 
 // objects are ref data type so pointer changes according to variable so answer: "light"
 
+// Correction: Original object remains unchanged. 
+// Output is "dark" because Object.assign creates 
+// a shallow copy, so modifying copySettings does not
+//  affect settings.
+
+
 // 8.
 const obj1 = { val: 1 };
 const obj2 = { val: 2 };
@@ -118,3 +124,4 @@ obj4.a = obj4;
 console.log(obj4.a.a.a.a === obj4);
 
 // Answer: False case obj4 is empty object
+// CORRECTION: Actually it's TRUE
